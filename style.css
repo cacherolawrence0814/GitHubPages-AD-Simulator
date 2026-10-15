@@ -1,1 +1,24 @@
-body{font-family:Arial;padding:20px} .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px} button{margin:5px}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;background:#f3f5f7;color:#202a33;font:10px Arial,sans-serif}
+main{max-width:1040px;margin:0 auto}
+h1{margin:0 0 20px;font-size:20px;font-weight:700;color:#172b3a}
+h2{margin:0 0 14px;font-size:14px}
+h3{margin:18px 0 8px;font-size:11px}
+.grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(240px,1fr);gap:16px;align-items:start}
+.panel{min-width:0;padding:16px;background:#fff;border:1px solid #c8d1d9;border-radius:4px}
+.table-wrap{overflow-x:auto;border:1px solid #c8d1d9}
+table{width:100%;border-collapse:collapse;text-align:left}
+th,td{padding:8px 10px;border-bottom:1px solid #d8dfe5}
+th{background:#eaf0f4;font-weight:700;color:#253b4b}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:#f7f9fa}
+.form-row{display:grid;gap:5px;margin-bottom:12px}
+input,select,button{min-height:30px;padding:6px 8px;border:1px solid #aebbc5;border-radius:3px;background:#fff;color:#202a33;font:inherit}
+input[type=file]{max-width:100%;padding:5px}
+button{cursor:pointer;font-weight:700}
+button:hover{background:#eaf0f4}
+.actions{display:flex;gap:6px;margin-bottom:14px}
+.json-preview,#ps{overflow:auto;margin:0;padding:10px;border:1px solid #d1d9df;background:#f7f9fa;white-space:pre-wrap;overflow-wrap:anywhere}
+.json-preview{font-style:italic}
+.powershell{margin-top:16px}
+@media(max-width:640px){body{padding:14px}.grid{grid-template-columns:1fr}.panel{padding:12px}}

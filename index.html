@@ -1,1 +1,51 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AD Simulator</title><link rel="stylesheet" href="style.css"></head><body><h1>LabGPT AD Simulator</h1><div class="grid"><div><h2>Domain Tree</h2><pre id="tree"></pre></div><div><h2>Create Object</h2><input id="name" placeholder="Name"><select id="type"><option>OU</option><option>User</option><option>Group</option><option>Computer</option></select><button onclick="addObject()">Add</button><button onclick="exportJson()">Export JSON</button><input type="file" id="importFile"></div></div><h2>PowerShell Preview</h2><pre id="ps"></pre><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>AD Simulator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main>
+		<h1>LabGPT AD Simulator</h1>
+		<div class="grid">
+			<section class="panel" aria-labelledby="directory-heading">
+				<h2 id="directory-heading">Directory Objects</h2>
+				<div class="table-wrap">
+					<table>
+						<thead><tr><th scope="col">Object type</th><th scope="col">Name</th></tr></thead>
+						<tbody id="directory"></tbody>
+					</table>
+				</div>
+				<h3>JSON Preview</h3>
+				<pre id="tree" class="json-preview"></pre>
+			</section>
+			<section class="panel" aria-labelledby="create-heading">
+				<h2 id="create-heading">Create Object</h2>
+				<div class="form-row">
+					<label for="name">Name</label>
+					<input id="name" placeholder="Name">
+				</div>
+				<div class="form-row">
+					<label for="type">Object type</label>
+					<select id="type"><option>OU</option><option>User</option><option>Group</option><option>Computer</option></select>
+				</div>
+				<div class="actions">
+					<button onclick="addObject()">Add</button>
+					<button onclick="exportJson()">Export JSON</button>
+				</div>
+				<div class="form-row">
+					<label for="importFile">Import JSON</label>
+					<input type="file" id="importFile" accept="application/json,.json">
+				</div>
+			</section>
+		</div>
+		<section class="panel powershell" aria-labelledby="powershell-heading">
+			<h2 id="powershell-heading">PowerShell Preview</h2>
+			<pre id="ps"></pre>
+		</section>
+	</main>
+	<script src="app.js"></script>
+</body>
+</html>
